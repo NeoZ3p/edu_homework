@@ -1,3 +1,5 @@
+import 'package:edu_homework/presenter/main_screen/main_screen.dart';
+import 'package:edu_homework/utils/app_theme_data.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,17 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MainScreen(),
+    return MaterialApp(
+      theme: AppThemeData.materialTheme,
+      home: const MainScreen(),
     );
-  }
-}
-
-class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column();
   }
 }
