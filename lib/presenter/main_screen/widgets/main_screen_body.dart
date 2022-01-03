@@ -14,7 +14,7 @@ class MainScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+      padding: const EdgeInsets.all(16),
       child: Column(
         children: [
           Expanded(
@@ -22,9 +22,7 @@ class MainScreenBody extends StatelessWidget {
               itemCount: pageNames.length,
               itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: RouteButton(
-                  routeName: pageNames[index],
-                ),
+                child: RouteButton(routeName: pageNames[index]),
               ),
             ),
           ),
