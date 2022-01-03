@@ -8,13 +8,17 @@ class AppThemeData {
     style: ElevatedButton.styleFrom(
       minimumSize: defaultSize,
       maximumSize: defaultSize,
-      textStyle: const TextStyle(color: Colors.black),
+      onPrimary: primaryColor,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
           Radius.circular(8),
         ),
       ),
     ),
+  );
+
+  static const textTheme = TextTheme(
+    bodyText2: TextStyle(color: primaryColor),
   );
 
   static const appBarTextStyle = TextStyle(
@@ -31,6 +35,7 @@ class AppThemeData {
 
   static ThemeData get materialTheme {
     return ThemeData(
+      textTheme: textTheme,
       primarySwatch: Colors.blue,
       primaryColor: primaryColor,
       elevatedButtonTheme: elevatedButtonTheme,
