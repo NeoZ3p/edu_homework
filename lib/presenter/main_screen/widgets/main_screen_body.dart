@@ -20,9 +20,11 @@ class MainScreenBody extends StatelessWidget {
           Expanded(
             child: ListView.builder(
               itemCount: pageNames.length,
-              itemBuilder: (context, index) => Container(
-                margin: const EdgeInsets.symmetric(vertical: 6.0),
-                child: RouteButton(routeName: pageNames[index]),
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: RouteButton(
+                  routeName: pageNames[index],
+                ),
               ),
             ),
           ),

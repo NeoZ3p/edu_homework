@@ -15,14 +15,8 @@ class RouteButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            routeName,
-            style: TextStyle(color: Theme.of(context).primaryColor),
-          ),
-          Icon(
-            Icons.arrow_forward,
-            color: Theme.of(context).primaryColor,
-          ),
+          Text(routeName),
+          const Icon(Icons.arrow_forward),
         ],
       ),
     );
