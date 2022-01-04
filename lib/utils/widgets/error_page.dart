@@ -1,8 +1,8 @@
-import 'package:edu_homework/utils/custom_appbar.dart';
+import 'package:edu_homework/utils/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
-class ErrorPage extends StatelessWidget {
-  const ErrorPage({Key? key, required this.title}) : super(key: key);
+class StubPage extends StatelessWidget {
+  const StubPage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 

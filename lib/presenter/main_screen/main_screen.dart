@@ -1,4 +1,4 @@
-import 'package:edu_homework/utils/custom_appbar.dart';
+import 'package:edu_homework/utils/widgets/custom_appbar.dart';
 import 'package:edu_homework/presenter/main_screen/widgets/main_screen_body.dart';
 import 'package:flutter/material.dart';
 

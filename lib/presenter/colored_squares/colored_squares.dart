@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:edu_homework/presenter/colored_squares/widgets/square_list.dart';
-import 'package:edu_homework/utils/custom_appbar.dart';
+import 'package:edu_homework/utils/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 class ColoredSquares extends StatefulWidget {

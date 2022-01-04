@@ -1,3 +1,4 @@
+import 'package:edu_homework/presenter/colored_squares/widgets/colored_square.dart';
 import 'package:flutter/material.dart';
 
 class SquareList extends StatelessWidget {
@@ -10,20 +11,19 @@ class SquareList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 100),
-      child: GridView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: 4,
-        itemBuilder: (_, index) => SizedBox(
-          height: 50,
-          width: 50,
-          child: ColoredBox(color: colors[index]),
-        ),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 32.0),
+        child: GridView.count(
           crossAxisCount: 2,
+          shrinkWrap: true,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
+          physics: const NeverScrollableScrollPhysics(),
+          children: List.generate(
+            4,
+            (index) => ColoredSquare(color: colors[index]),
+          ),
         ),
       ),
     );
