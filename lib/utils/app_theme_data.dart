@@ -35,6 +35,9 @@ class AppThemeData {
 
   static ThemeData get materialTheme {
     return ThemeData(
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        foregroundColor: primaryColor,
+      ),
       textTheme: textTheme,
       primarySwatch: Colors.blue,
       primaryColor: primaryColor,
