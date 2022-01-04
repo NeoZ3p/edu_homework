@@ -27,21 +27,23 @@ class _ColoredSquaresState extends State<ColoredSquares> {
       appBar: const CustomAppBar(title: '4 квадрата'),
       body: SquareList(colors: colors),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => setState(() => _generateRandomColors()),
+        onPressed: _generateRandomColors,
         child: const Icon(Icons.note_alt_outlined),
       ),
     );
   }
 
   void _generateRandomColors() {
-    colors = List.generate(
-      4,
-      (_) {
-        var randomColor =
-            Colors.primaries[Random().nextInt(Colors.primaries.length)];
+    setState(() {
+      colors = List.generate(
+        4,
+        (_) {
+          var randomColor =
+              Colors.primaries[Random().nextInt(Colors.primaries.length)];
 
-        return randomColor;
-      },
-    );
+          return randomColor;
+        },
+      );
+    });
   }
 }
