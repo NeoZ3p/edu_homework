@@ -1,4 +1,6 @@
 import 'package:edu_homework/presenter/main_screen/widgets/route_button.dart';
+import 'package:edu_homework/utils/routes.dart';
+import 'package:edu_homework/utils/widgets/error_page.dart';
 import 'package:flutter/material.dart';
 
 const pageNames = [
@@ -19,8 +21,22 @@ class MainScreenBody extends StatelessWidget {
         itemCount: pageNames.length,
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: RouteButton(routeName: pageNames[index]),
+          child: RouteButton(
+            routeName: pageNames[index],
+            onPush: () => _navigateToPage(context, pageNames[index]),
+          ),
         ),
+      ),
+    );
+  }
+
+  void _navigateToPage(BuildContext context, String routeName) {
+    var pageRoutes = Routes.pageRoutes;
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => pageRoutes[routeName] ?? StubPage(title: routeName),
       ),
     );
   }
