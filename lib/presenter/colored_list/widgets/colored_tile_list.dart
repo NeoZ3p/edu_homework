@@ -17,6 +17,7 @@ class ColoredTileList extends StatelessWidget {
         itemBuilder: (context, index) => ColoredRectangle(
           rectSize: tileSize,
           color: colors[index],
+          padding: 5.0,
         ),
       ),
     );

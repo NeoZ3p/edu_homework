@@ -25,7 +25,7 @@ class SquareList extends StatelessWidget {
             (index) => ColoredRectangle(
               rectSize: const Size(50, 50),
               color: colors[index],
-              isSquare: true,
+              padding: 0,
             ),
           ),
         ),
