@@ -1,4 +1,4 @@
-import 'package:edu_homework/presenter/colored_squares/widgets/colored_square.dart';
+import 'package:edu_homework/utils/widgets/colored_rectangle.dart';
 import 'package:flutter/material.dart';
 
 class SquareList extends StatelessWidget {
@@ -22,7 +22,11 @@ class SquareList extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           children: List.generate(
             4,
-            (index) => ColoredSquare(color: colors[index]),
+            (index) => ColoredRectangle(
+              rectSize: const Size(50, 50),
+              color: colors[index],
+              padding: 0,
+            ),
           ),
         ),
       ),

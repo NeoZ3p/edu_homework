@@ -1,22 +1,25 @@
-import 'dart:math';
-
 import 'package:edu_homework/presenter/colored_squares/widgets/square_list.dart';
+import 'package:edu_homework/utils/generate_color_list.dart';
+import 'package:edu_homework/utils/page_names.dart';
 import 'package:edu_homework/utils/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
-class ColoredSquares extends StatefulWidget {
-  const ColoredSquares({Key? key}) : super(key: key);
+class ColoredSquaresPage extends StatefulWidget {
+  const ColoredSquaresPage({Key? key}) : super(key: key);
 
   @override
-  State<ColoredSquares> createState() => _ColoredSquaresState();
+  State<ColoredSquaresPage> createState() => _ColoredSquaresPageState();
 }
 
-class _ColoredSquaresState extends State<ColoredSquares> {
+class _ColoredSquaresPageState extends State<ColoredSquaresPage> {
   late List<Color> colors;
 
   @override
   void initState() {
-    colors = List.generate(4, (_) => Colors.grey);
+    colors = generateColorList(
+      count: 4,
+      color: Colors.grey,
+    );
 
     super.initState();
   }
@@ -24,7 +27,7 @@ class _ColoredSquaresState extends State<ColoredSquares> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: '4 квадрата'),
+      appBar: const CustomAppBar(title: PageNames.coloredSquares),
       body: SquareList(colors: colors),
       floatingActionButton: FloatingActionButton(
         onPressed: _generateRandomColors,
@@ -35,14 +38,9 @@ class _ColoredSquaresState extends State<ColoredSquares> {
 
   void _generateRandomColors() {
     setState(() {
-      colors = List.generate(
-        4,
-        (_) {
-          var randomColor =
-              Colors.primaries[Random().nextInt(Colors.primaries.length)];
-
-          return randomColor;
-        },
+      colors = generateColorList(
+        count: 4,
+        isRandomColorList: true,
       );
     });
   }
