@@ -37,9 +37,11 @@ class _ColoredSquaresPageState extends State<ColoredSquaresPage> {
   }
 
   void _generateRandomColors() {
-    setState(() => colors = generateColorList(
-          count: 4,
-          isRandomColorList: true,
-        ));
+    setState(() {
+      colors = generateColorList(
+        count: 4,
+        isRandomColorList: true,
+      );
+    });
   }
 }

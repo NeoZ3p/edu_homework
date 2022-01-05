@@ -34,8 +34,8 @@ class _ColoredListPageState extends State<ColoredListPage> {
   }
 
   void _generateRandomColors() {
-    setState(
-      () => colors = generateColorList(count: 1000, isRandomColorList: true),
-    );
+    setState(() {
+      colors = generateColorList(count: 1000, isRandomColorList: true);
+    });
   }
 }

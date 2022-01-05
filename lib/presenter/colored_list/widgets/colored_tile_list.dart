@@ -1,6 +1,7 @@
+import 'package:edu_homework/utils/widgets/colored_rectangle.dart';
 import 'package:flutter/material.dart';
 
-import 'colored_tile.dart';
+const tileSize = Size(double.infinity, 71);
 
 class ColoredTileList extends StatelessWidget {
   const ColoredTileList({Key? key, required this.colors}) : super(key: key);
@@ -13,7 +14,10 @@ class ColoredTileList extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: ListView.builder(
         itemCount: colors.length,
-        itemBuilder: (context, index) => ColoredTile(color: colors[index]),
+        itemBuilder: (context, index) => ColoredRectangle(
+          rectSize: tileSize,
+          color: colors[index],
+        ),
       ),
     );
   }
