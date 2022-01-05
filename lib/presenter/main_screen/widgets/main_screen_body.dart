@@ -30,18 +30,13 @@ class MainScreenBody extends StatelessWidget {
     );
   }
 
-  void _navigateToPage(context, routeName) {
+  void _navigateToPage(BuildContext context, String routeName) {
     var pageRoutes = Routes.pageRoutes;
 
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (_) {
-          if (pageRoutes.containsKey(routeName)) {
-            return pageRoutes[routeName]!;
-          }
-          return StubPage(title: routeName);
-        },
+        builder: (_) => pageRoutes[routeName] ?? StubPage(title: routeName),
       ),
     );
   }

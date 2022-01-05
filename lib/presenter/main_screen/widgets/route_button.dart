@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'custom_elevated_btn.dart';
-
 class RouteButton extends StatelessWidget {
   const RouteButton({
     Key? key,
@@ -14,8 +12,8 @@ class RouteButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomElevatedBtn(
-      onPush: onPush,
+    return ElevatedButton(
+      onPressed: onPush,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

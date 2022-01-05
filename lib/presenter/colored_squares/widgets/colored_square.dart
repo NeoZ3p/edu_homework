@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const squareSize = 50.0;
+
 class ColoredSquare extends StatelessWidget {
   const ColoredSquare({Key? key, required this.color}) : super(key: key);
 
@@ -7,10 +9,10 @@ class ColoredSquare extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 50,
-      width: 50,
-      child: ColoredBox(color: color),
+    return Container(
+      height: squareSize,
+      width: squareSize,
+      color: color,
     );
   }
 }
