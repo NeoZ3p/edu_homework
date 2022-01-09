@@ -18,7 +18,10 @@ class AppThemeData {
   );
 
   static const textTheme = TextTheme(
-    bodyText2: TextStyle(color: primaryColor),
+    bodyText2: TextStyle(
+      color: primaryColor,
+      fontSize: 18,
+    ),
   );
 
   static const appBarTextStyle = TextStyle(

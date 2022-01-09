@@ -9,7 +9,7 @@ class MainScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var pageList = PageNames.pageList;
+    var pageList = Constants.pageList;
 
     return Padding(
       padding: const EdgeInsets.all(16),

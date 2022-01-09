@@ -12,7 +12,7 @@ class SavedSuggestionsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text(PageNames.savedSuggestionsPage)),
+      appBar: AppBar(title: const Text(Constants.savedSuggestionsPage)),
       body: ListView(children: divided),
     );
   }

@@ -1,6 +1,9 @@
-class PageNames {
-  static const String coloredSquares = '4 квадрата';
-  static const String coloredList = 'Цветной список';
+class Constants {
+  static const String loadingDataText =
+      'Нажмите на кнопку для \nподгрузки данных';
+
+  static const String coloredSquaresPage = '4 квадрата';
+  static const String coloredListPage = 'Цветной список';
   static const String codelabPage = 'Codelab';
   static const String asyncQueryPage = 'Асинхронный запрос';
 
@@ -9,8 +12,8 @@ class PageNames {
   static const String savedSuggestionsPage = 'Saved Suggestions';
 
   static const List<String> pageList = [
-    coloredSquares,
-    coloredList,
+    coloredSquaresPage,
+    coloredListPage,
     codelabPage,
     asyncQueryPage,
   ];

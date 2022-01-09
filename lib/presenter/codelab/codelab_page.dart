@@ -18,12 +18,12 @@ class _CodelabPageState extends State<CodelabPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(PageNames.codelabPage),
+        title: const Text(Constants.codelabPage),
         actions: [
           IconButton(
             icon: const Icon(Icons.list),
             onPressed: () => _pushSaved(context),
-            tooltip: PageNames.savedSuggestionsPage,
+            tooltip: Constants.savedSuggestionsPage,
           ),
         ],
       ),
