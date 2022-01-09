@@ -1,7 +1,6 @@
 import 'package:edu_homework/presenter/colored_squares/widgets/square_list.dart';
 import 'package:edu_homework/utils/generate_color_list.dart';
 import 'package:edu_homework/utils/page_names.dart';
-import 'package:edu_homework/utils/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 class ColoredSquaresPage extends StatefulWidget {
@@ -27,7 +26,7 @@ class _ColoredSquaresPageState extends State<ColoredSquaresPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: PageNames.coloredSquares),
+      appBar: AppBar(title: const Text(PageNames.coloredSquares)),
       body: SquareList(colors: colors),
       floatingActionButton: FloatingActionButton(
         onPressed: _generateRandomColors,

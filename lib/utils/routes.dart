@@ -1,3 +1,4 @@
+import 'package:edu_homework/presenter/codelab/codelab_page.dart';
 import 'package:edu_homework/presenter/colored_list/colored_list_page.dart';
 import 'package:edu_homework/presenter/colored_squares/colored_squares_page.dart';
 import 'package:edu_homework/utils/page_names.dart';
@@ -7,5 +8,6 @@ class Routes {
   static const Map<String, Widget> pageRoutes = {
     PageNames.coloredSquares: ColoredSquaresPage(),
     PageNames.coloredList: ColoredListPage(),
+    PageNames.codelabPage: CodelabPage(),
   };
 }
