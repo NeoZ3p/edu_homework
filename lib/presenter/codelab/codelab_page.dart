@@ -20,7 +20,6 @@ class _CodelabPageState extends State<CodelabPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(PageNames.codelabPage),
-        centerTitle: false,
         actions: [
           IconButton(
             icon: const Icon(Icons.list),

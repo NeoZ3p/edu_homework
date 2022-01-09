@@ -43,6 +43,7 @@ class AppThemeData {
       primaryColor: primaryColor,
       elevatedButtonTheme: elevatedButtonTheme,
       appBarTheme: const AppBarTheme(
+        centerTitle: false,
         titleTextStyle: appBarTextStyle,
         foregroundColor: primaryColor,
       ),
