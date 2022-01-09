@@ -5,7 +5,7 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
 class CodelabPage extends StatefulWidget {
-  const CodelabPage({Key? key}) : super(key: key);
+  CodelabPage({Key? key}) : super(key: key);
 
   @override
   State<CodelabPage> createState() => _CodelabPageState();
@@ -13,7 +13,6 @@ class CodelabPage extends StatefulWidget {
 
 class _CodelabPageState extends State<CodelabPage> {
   final _saved = <WordPair>{};
-  final _suggestions = <WordPair>[];
 
   @override
   Widget build(BuildContext context) {
@@ -29,16 +28,10 @@ class _CodelabPageState extends State<CodelabPage> {
         ],
       ),
       body: RandomWords(
-        suggestions: _suggestions,
         saved: _saved,
         onIconTap: _onIconTap,
-        addSuggestions: _addSuggestions,
       ),
     );
-  }
-
-  void _addSuggestions(int count) {
-    _suggestions.addAll(generateWordPairs().take(count));
   }
 
   void _onIconTap(bool alreadySaved, WordPair pair) {
