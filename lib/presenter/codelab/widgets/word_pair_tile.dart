@@ -1,16 +1,13 @@
-import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
 class WordPairTile extends StatelessWidget {
   const WordPairTile({
     Key? key,
-    required this.saved,
     required this.pair,
     required this.alreadySaved,
     required this.onIconTap,
   }) : super(key: key);
 
-  final Set<WordPair> saved;
   final String pair;
   final bool alreadySaved;
   final VoidCallback onIconTap;

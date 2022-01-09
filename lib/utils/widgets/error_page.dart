@@ -1,4 +1,3 @@
-import 'package:edu_homework/utils/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 class StubPage extends StatelessWidget {
@@ -9,7 +8,7 @@ class StubPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: title),
+      appBar: AppBar(title: Text(title)),
       body: const Center(
         child: Text('Данная страница находится на этапе разработки'),
       ),

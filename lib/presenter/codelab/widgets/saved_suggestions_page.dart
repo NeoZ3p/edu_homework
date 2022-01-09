@@ -1,5 +1,4 @@
 import 'package:edu_homework/utils/page_names.dart';
-import 'package:edu_homework/utils/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 class SavedSuggestionsPage extends StatelessWidget {
@@ -13,7 +12,7 @@ class SavedSuggestionsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: PageNames.savedSuggestionsPage),
+      appBar: AppBar(title: const Text(PageNames.savedSuggestionsPage)),
       body: ListView(children: divided),
     );
   }

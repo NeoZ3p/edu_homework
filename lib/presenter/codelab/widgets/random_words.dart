@@ -8,11 +8,13 @@ class RandomWords extends StatelessWidget {
     required this.suggestions,
     required this.saved,
     required this.onIconTap,
+    required this.addSuggestions,
   }) : super(key: key);
 
   final List<WordPair> suggestions;
   final Set<WordPair> saved;
   final Function(bool, WordPair) onIconTap;
+  final Function(int) addSuggestions;
 
   @override
   Widget build(BuildContext context) {
@@ -23,23 +25,16 @@ class RandomWords extends StatelessWidget {
 
         var index = i ~/ 2;
 
-        if (index >= suggestions.length) {
-          suggestions.addAll(generateWordPairs().take(10));
-        }
+        if (index >= suggestions.length) addSuggestions(10);
 
-        return _buildRow(suggestions[index]);
+        var alreadySaved = saved.contains(suggestions[index]);
+
+        return WordPairTile(
+          pair: suggestions[index].asPascalCase,
+          alreadySaved: alreadySaved,
+          onIconTap: () => onIconTap(alreadySaved, suggestions[index]),
+        );
       },
-    );
-  }
-
-  Widget _buildRow(WordPair pair) {
-    var alreadySaved = saved.contains(pair);
-
-    return WordPairTile(
-      pair: pair.asPascalCase,
-      saved: saved,
-      alreadySaved: alreadySaved,
-      onIconTap: () => onIconTap(alreadySaved, pair),
     );
   }
 }

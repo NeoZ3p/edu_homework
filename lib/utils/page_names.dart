@@ -4,6 +4,8 @@ class PageNames {
   static const String codelabPage = 'Codelab';
   static const String asyncQueryPage = 'Асинхронный запрос';
 
+  static const String mainScreen = 'Главная';
+
   static const String savedSuggestionsPage = 'Saved Suggestions';
 
   static const List<String> pageList = [

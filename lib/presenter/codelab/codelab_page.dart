@@ -1,7 +1,6 @@
 import 'package:edu_homework/presenter/codelab/widgets/random_words.dart';
 import 'package:edu_homework/presenter/codelab/widgets/saved_suggestions_page.dart';
 import 'package:edu_homework/utils/page_names.dart';
-import 'package:edu_homework/utils/widgets/custom_appbar.dart';
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
@@ -19,8 +18,9 @@ class _CodelabPageState extends State<CodelabPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        title: PageNames.codelabPage,
+      appBar: AppBar(
+        title: const Text(PageNames.codelabPage),
+        centerTitle: false,
         actions: [
           IconButton(
             icon: const Icon(Icons.list),
@@ -33,8 +33,13 @@ class _CodelabPageState extends State<CodelabPage> {
         suggestions: _suggestions,
         saved: _saved,
         onIconTap: _onIconTap,
+        addSuggestions: _addSuggestions,
       ),
     );
+  }
+
+  void _addSuggestions(int count) {
+    _suggestions.addAll(generateWordPairs().take(count));
   }
 
   void _onIconTap(bool alreadySaved, WordPair pair) {
