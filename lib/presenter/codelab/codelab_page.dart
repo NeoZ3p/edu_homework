@@ -5,7 +5,7 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
 class CodelabPage extends StatefulWidget {
-  CodelabPage({Key? key}) : super(key: key);
+  const CodelabPage({Key? key}) : super(key: key);
 
   @override
   State<CodelabPage> createState() => _CodelabPageState();

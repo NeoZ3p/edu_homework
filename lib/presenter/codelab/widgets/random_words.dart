@@ -18,39 +18,52 @@ class RandomWords extends StatefulWidget {
 
 class _RandomWordsState extends State<RandomWords> {
   late List<WordPair> _suggestions;
+  late ScrollController _controller;
 
   @override
   void initState() {
     _suggestions = [];
+    _controller = ScrollController()..addListener(_scrollListener);
 
-    _addSuggestions(10);
+    _addSuggestions(20);
 
     super.initState();
   }
 
   @override
+  void dispose() {
+    _controller.removeListener(_scrollListener);
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
+      controller: _controller,
+      itemCount: _suggestions.length,
+      separatorBuilder: (_, __) => const Divider(),
       padding: const EdgeInsets.all(16.0),
       itemBuilder: (context, i) {
-        if (i.isOdd) return const Divider();
-
-        var index = i ~/ 2;
-
-        if (index >= _suggestions.length) _addSuggestions(10);
-
-        var alreadySaved = widget.saved.contains(_suggestions[index]);
+        var alreadySaved = widget.saved.contains(_suggestions[i]);
 
         return WordPairTile(
-          pair: _suggestions[index].asPascalCase,
+          pair: _suggestions[i].asPascalCase,
           alreadySaved: alreadySaved,
-          onIconTap: () => widget.onIconTap(alreadySaved, _suggestions[index]),
+          onIconTap: () => widget.onIconTap(alreadySaved, _suggestions[i]),
         );
       },
     );
   }
 
+  void _scrollListener() {
+    if (_controller.position.extentAfter == 0) {
+      _addSuggestions(10);
+    }
+  }
+
   void _addSuggestions(int count) {
-    _suggestions.addAll(generateWordPairs().take(count));
+    setState(() {
+      _suggestions.addAll(generateWordPairs().take(count));
+    });
   }
 }
