@@ -12,8 +12,7 @@ Future<List<News>> getNewsList() async {
     throw Exception('Загрузить данные не удалось');
   }
 
-  return (jsonDecode(response.body) as List)
-      .cast<Map<String, dynamic>>()
+  return List<Map<String, dynamic>>.from(jsonDecode(response.body) as List)
       .map((news) => GtoNews.fromJson(news).toNewsModel())
       .toList();
 }
