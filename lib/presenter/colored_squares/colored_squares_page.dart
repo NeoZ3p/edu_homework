@@ -26,7 +26,7 @@ class _ColoredSquaresPageState extends State<ColoredSquaresPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text(PageNames.coloredSquares)),
+      appBar: AppBar(title: const Text(Constants.coloredSquaresPage)),
       body: SquareList(colors: colors),
       floatingActionButton: FloatingActionButton(
         onPressed: _generateRandomColors,

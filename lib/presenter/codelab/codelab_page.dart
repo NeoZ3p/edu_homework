@@ -18,12 +18,12 @@ class _CodelabPageState extends State<CodelabPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(PageNames.codelabPage),
+        title: const Text(Constants.codelabPage),
         actions: [
           IconButton(
             icon: const Icon(Icons.list),
             onPressed: () => _pushSaved(context),
-            tooltip: PageNames.savedSuggestionsPage,
+            tooltip: Constants.savedSuggestionsPage,
           ),
         ],
       ),
@@ -45,16 +45,16 @@ class _CodelabPageState extends State<CodelabPage> {
   }
 
   void _pushSaved(BuildContext context) {
-    Navigator.of(context).push(
+    Navigator.of(context).push<MaterialPageRoute>(
       MaterialPageRoute(
-        builder: (BuildContext context) {
-          var tiles = _saved.map(
+        builder: (context) {
+          final tiles = _saved.map(
             (pair) => ListTile(
               title: Text(pair.asPascalCase),
             ),
           );
 
-          var divided = tiles.isNotEmpty
+          final divided = tiles.isNotEmpty
               ? ListTile.divideTiles(
                   context: context,
                   tiles: tiles,

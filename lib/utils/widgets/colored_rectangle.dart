@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ColoredRectangle extends StatelessWidget {
-  const ColoredRectangle(
-      {Key? key,
-      required this.rectSize,
-      required this.color,
-      required this.padding})
-      : super(key: key);
+  const ColoredRectangle({
+    required this.rectSize,
+    required this.color,
+    required this.padding,
+    Key? key,
+  }) : super(key: key);
 
   final Size rectSize;
   final Color color;

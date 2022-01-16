@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 class RandomWords extends StatefulWidget {
   const RandomWords({
-    Key? key,
     required this.saved,
     required this.onIconTap,
+    Key? key,
   }) : super(key: key);
 
   final Set<WordPair> saved;
@@ -44,7 +44,7 @@ class _RandomWordsState extends State<RandomWords> {
       separatorBuilder: (_, __) => const Divider(),
       padding: const EdgeInsets.all(16.0),
       itemBuilder: (context, i) {
-        var alreadySaved = widget.saved.contains(_suggestions[i]);
+        final alreadySaved = widget.saved.contains(_suggestions[i]);
 
         return WordPairTile(
           pair: _suggestions[i].asPascalCase,

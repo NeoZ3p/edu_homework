@@ -9,7 +9,7 @@ class MainScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var pageList = PageNames.pageList;
+    final pageList = Constants.pageList;
 
     return Padding(
       padding: const EdgeInsets.all(16),
@@ -27,9 +27,9 @@ class MainScreenBody extends StatelessWidget {
   }
 
   void _navigateToPage(BuildContext context, String routeName) {
-    var pageRoutes = Routes.pageRoutes;
+    final pageRoutes = Routes.pageRoutes;
 
-    Navigator.push(
+    Navigator.push<MaterialPageRoute>(
       context,
       MaterialPageRoute(
         builder: (_) => pageRoutes[routeName] ?? StubPage(title: routeName),

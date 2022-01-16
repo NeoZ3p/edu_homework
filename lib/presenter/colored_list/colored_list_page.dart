@@ -23,7 +23,7 @@ class _ColoredListPageState extends State<ColoredListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text(PageNames.coloredList)),
+      appBar: AppBar(title: const Text(Constants.coloredListPage)),
       body: ColoredTileList(colors: colors),
       floatingActionButton: FloatingActionButton(
         onPressed: _generateRandomColors,

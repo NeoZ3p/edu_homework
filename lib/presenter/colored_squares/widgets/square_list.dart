@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 class SquareList extends StatelessWidget {
   const SquareList({
-    Key? key,
     required this.colors,
+    Key? key,
   }) : super(key: key);
 
   final List<Color> colors;

@@ -8,7 +8,7 @@ List<Color> generateColorList({
   bool? isRandomColorList,
 }) {
   return List.generate(count, (_) {
-    var randomColor =
+    final randomColor =
         Colors.primaries[Random().nextInt(Colors.primaries.length)];
 
     return color ?? randomColor;

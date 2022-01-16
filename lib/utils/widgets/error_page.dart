@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class StubPage extends StatelessWidget {
-  const StubPage({Key? key, required this.title}) : super(key: key);
+  const StubPage({
+    required this.title,
+    Key? key,
+  }) : super(key: key);
 
   final String title;
 
