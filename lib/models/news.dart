@@ -8,7 +8,6 @@ abstract class News implements _$News {
   const News._();
 
   factory News({
-    required int id,
     required String title,
     required String url,
   }) = _News;

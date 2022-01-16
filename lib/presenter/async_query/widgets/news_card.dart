@@ -7,8 +7,8 @@ const BorderRadius _containerBorderRadius = BorderRadius.all(_radius);
 
 class NewsCard extends StatelessWidget {
   const NewsCard({
-    Key? key,
     required this.news,
+    Key? key,
   }) : super(key: key);
 
   final News news;

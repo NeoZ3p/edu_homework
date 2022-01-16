@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 
 class NewsCardList extends StatelessWidget {
   const NewsCardList({
-    Key? key,
     required this.newsList,
     required this.isDataLoaded,
+    Key? key,
   }) : super(key: key);
 
   final List<News> newsList;

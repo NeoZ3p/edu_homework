@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 class SavedSuggestionsPage extends StatelessWidget {
   const SavedSuggestionsPage({
-    Key? key,
     required this.divided,
+    Key? key,
   }) : super(key: key);
 
   final List<Widget> divided;

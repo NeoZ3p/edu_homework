@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class WordPairTile extends StatelessWidget {
   const WordPairTile({
-    Key? key,
     required this.pair,
     required this.alreadySaved,
     required this.onIconTap,
+    Key? key,
   }) : super(key: key);
 
   final String pair;

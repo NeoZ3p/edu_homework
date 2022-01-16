@@ -1,11 +1,8 @@
-import 'dart:convert';
-
 import 'package:edu_homework/models/news.dart';
 import 'package:edu_homework/presenter/async_query/widgets/news_card_list.dart';
 import 'package:edu_homework/utils/page_names.dart';
+import 'package:edu_homework/utils/services/get_news_list.dart';
 import 'package:flutter/material.dart';
-
-import 'package:http/http.dart' as http;
 
 class AsyncQueryPage extends StatefulWidget {
   const AsyncQueryPage({Key? key}) : super(key: key);
@@ -34,30 +31,23 @@ class _AsyncQueryPageState extends State<AsyncQueryPage> {
         isDataLoaded: _isDataLoaded,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => _getNewsList(),
+        onPressed: _loadNewsList,
         child: const Icon(Icons.add),
       ),
     );
   }
 
-  void _getNewsList() async {
+  Future<void> _loadNewsList() async {
     setState(() {
       _isDataLoaded = false;
       _newsList = [];
     });
-    var url = Uri.parse('https://jsonplaceholder.typicode.com/photos');
 
-    var response = await http.get(url);
-
-    if (response.statusCode != 200) {
-      throw Exception('Загрузить данные не удалось');
-    }
-
-    List<dynamic> newsList = jsonDecode(response.body);
+    final newsList = await getNewsList();
 
     setState(() {
       _isDataLoaded = true;
-      _newsList = newsList.map((news) => News.fromJson(news)).toList();
+      _newsList = newsList;
     });
   }
 }

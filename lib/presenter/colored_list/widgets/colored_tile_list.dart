@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 const tileSize = Size(double.infinity, 71);
 
 class ColoredTileList extends StatelessWidget {
-  const ColoredTileList({Key? key, required this.colors}) : super(key: key);
+  const ColoredTileList({
+    required this.colors,
+    Key? key,
+  }) : super(key: key);
 
   final List<Color> colors;
 

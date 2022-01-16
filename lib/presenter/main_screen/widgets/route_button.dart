@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class RouteButton extends StatelessWidget {
   const RouteButton({
-    Key? key,
     required this.routeName,
     required this.onPush,
+    Key? key,
   }) : super(key: key);
 
   final String routeName;

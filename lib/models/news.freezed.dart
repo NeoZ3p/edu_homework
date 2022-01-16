@@ -22,9 +22,8 @@ News _$NewsFromJson(Map<String, dynamic> json) {
 class _$NewsTearOff {
   const _$NewsTearOff();
 
-  _News call({required int id, required String title, required String url}) {
+  _News call({required String title, required String url}) {
     return _News(
-      id: id,
       title: title,
       url: url,
     );
@@ -40,7 +39,6 @@ const $News = _$NewsTearOff();
 
 /// @nodoc
 mixin _$News {
-  int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
 
@@ -53,7 +51,7 @@ mixin _$News {
 abstract class $NewsCopyWith<$Res> {
   factory $NewsCopyWith(News value, $Res Function(News) then) =
       _$NewsCopyWithImpl<$Res>;
-  $Res call({int id, String title, String url});
+  $Res call({String title, String url});
 }
 
 /// @nodoc
@@ -66,15 +64,10 @@ class _$NewsCopyWithImpl<$Res> implements $NewsCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? title = freezed,
     Object? url = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -92,7 +85,7 @@ abstract class _$NewsCopyWith<$Res> implements $NewsCopyWith<$Res> {
   factory _$NewsCopyWith(_News value, $Res Function(_News) then) =
       __$NewsCopyWithImpl<$Res>;
   @override
-  $Res call({int id, String title, String url});
+  $Res call({String title, String url});
 }
 
 /// @nodoc
@@ -106,15 +99,10 @@ class __$NewsCopyWithImpl<$Res> extends _$NewsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? title = freezed,
     Object? url = freezed,
   }) {
     return _then(_News(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -130,13 +118,10 @@ class __$NewsCopyWithImpl<$Res> extends _$NewsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_News extends _News {
-  _$_News({required this.id, required this.title, required this.url})
-      : super._();
+  _$_News({required this.title, required this.url}) : super._();
 
   factory _$_News.fromJson(Map<String, dynamic> json) => _$$_NewsFromJson(json);
 
-  @override
-  final int id;
   @override
   final String title;
   @override
@@ -144,7 +129,7 @@ class _$_News extends _News {
 
   @override
   String toString() {
-    return 'News(id: $id, title: $title, url: $url)';
+    return 'News(title: $title, url: $url)';
   }
 
   @override
@@ -152,7 +137,6 @@ class _$_News extends _News {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _News &&
-            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.url, url));
   }
@@ -160,7 +144,6 @@ class _$_News extends _News {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(url));
 
@@ -176,14 +159,11 @@ class _$_News extends _News {
 }
 
 abstract class _News extends News {
-  factory _News({required int id, required String title, required String url}) =
-      _$_News;
+  factory _News({required String title, required String url}) = _$_News;
   _News._() : super._();
 
   factory _News.fromJson(Map<String, dynamic> json) = _$_News.fromJson;
 
-  @override
-  int get id;
   @override
   String get title;
   @override

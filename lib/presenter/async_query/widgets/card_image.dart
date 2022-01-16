@@ -9,8 +9,8 @@ const BorderRadius _imageBorderRadius = BorderRadius.only(
 
 class CardImage extends StatelessWidget {
   const CardImage({
-    Key? key,
     required this.imageUrl,
+    Key? key,
   }) : super(key: key);
 
   final String imageUrl;
